@@ -1,0 +1,67 @@
+name: Build and publish calendar feeds
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 07:10 UTC daily — a bit after 3am Eastern, so new athletics PDFs posted
+    # during the day are picked up overnight.
+    - cron: "10 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Scrape Mason athletics schedules
+        # Never fail the build over the athletics site being down or
+        # reformatted — the academic feeds matter more and must keep shipping.
+        continue-on-error: true
+        run: |
+          python scripts/scrape_sports.py \
+            --season-start 2026-08-01 \
+            --season-end 2027-07-31 \
+            --levels Varsity
+
+      - name: Build feeds and site
+        run: python scripts/build.py --base-url "${{ steps.pages.outputs.base_url }}"
+
+      - name: Validate generated feeds
+        run: python scripts/validate.py
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

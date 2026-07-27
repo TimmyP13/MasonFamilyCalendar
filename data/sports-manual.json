@@ -1,0 +1,23 @@
+{
+  "_comment": [
+    "Hand-entered games. These are merged on top of data/sports-scraped.json and WIN on conflict.",
+    "Use this when the scraper misses a PDF, gets a row wrong, or a game is rescheduled.",
+    "Identity for de-duplication is: sport + level + gender + date + opponent.",
+    "Fields: sport (slug), sportLabel, level, gender, season, date (YYYY-MM-DD),",
+    "time ('HH:MM' 24-hour, or null for TBA), opponent, homeAway ('Home'|'Away'|''),",
+    "durationMinutes (optional, defaults to 120), source (optional URL)."
+  ],
+  "_example": {
+    "sport": "football",
+    "sportLabel": "Football",
+    "level": "Varsity",
+    "gender": "",
+    "season": "fall",
+    "date": "2026-09-04",
+    "time": "19:00",
+    "opponent": "Lakota East High School",
+    "homeAway": "Home",
+    "source": "https://www.gomasoncomets.com/schedules/"
+  },
+  "games": []
+}

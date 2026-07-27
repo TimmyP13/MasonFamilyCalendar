@@ -1,0 +1,229 @@
+{
+  "year": "2026-2027",
+  "source": "Mason City Schools 26|27 Academic Calendar PDF, revised 7.8.25",
+  "notes": [
+    "All events are all-day events. 'end' is INCLUSIVE; the ICS writer converts it to the exclusive DTEND that RFC 5545 requires.",
+    "'audiences' uses building codes from schools.json, or 'all' for district-wide.",
+    "'byAudience' overrides summary/description for a specific building."
+  ],
+  "events": [
+    {
+      "id": "pwd-aug-10",
+      "summary": "Staff Professional Work Day — No School",
+      "start": "2026-08-10",
+      "end": "2026-08-10",
+      "category": "no-school",
+      "audiences": ["all"],
+      "description": "Professional work day for staff. No students. Listed on the district calendar as part of the Aug 10–12 professional work days."
+    },
+    {
+      "id": "welcome-mi",
+      "summary": "Family Welcome Day — Mason Intermediate",
+      "start": "2026-08-11",
+      "end": "2026-08-11",
+      "category": "event",
+      "audiences": ["mi"],
+      "description": "Family Welcome Day for Mason Intermediate (grades 5–6). Also a staff professional work day district-wide; no classes."
+    },
+    {
+      "id": "pwd-aug-11",
+      "summary": "Staff Professional Work Day — No School",
+      "start": "2026-08-11",
+      "end": "2026-08-11",
+      "category": "no-school",
+      "audiences": ["mecc", "me", "mms", "mhs"],
+      "description": "Professional work day for staff. No students. Mason Intermediate holds its Family Welcome Day today."
+    },
+    {
+      "id": "welcome-aug-12",
+      "summary": "Family Welcome Day",
+      "start": "2026-08-12",
+      "end": "2026-08-12",
+      "category": "event",
+      "audiences": ["mecc", "me", "mms", "mhs"],
+      "description": "Family Welcome Day for MECC, Mason Elementary, Mason Middle School and Mason High School. Also a staff professional work day; no classes.",
+      "byAudience": {
+        "mecc": {
+          "summary": "Family Welcome Day — MECC",
+          "description": "Family Welcome Day at the Mason Early Childhood Center. Also a staff professional work day; no classes."
+        },
+        "mhs": {
+          "summary": "Family Welcome Day — Mason High School",
+          "description": "Family Welcome Day at Mason High School. Also a staff professional work day; no classes."
+        }
+      }
+    },
+    {
+      "id": "pwd-aug-12",
+      "summary": "Staff Professional Work Day — No School",
+      "start": "2026-08-12",
+      "end": "2026-08-12",
+      "category": "no-school",
+      "audiences": ["mi"],
+      "description": "Professional work day for staff. No students."
+    },
+    {
+      "id": "first-day",
+      "summary": "First Day of School — Staggered Start",
+      "start": "2026-08-13",
+      "end": "2026-08-14",
+      "category": "first-last",
+      "audiences": ["all"],
+      "description": "MCS Day 1 is staggered across two days.\n\nThu Aug 13: grades K–6 with last names A–L, plus grades 7, 9 and 12.\nFri Aug 14: grades K–6 with last names M–Z, plus grades 8, 10 and 11.\n\nAll students attend on Mon Aug 17.",
+      "byAudience": {
+        "mecc": {
+          "summary": "First Day of School — Staggered Start (MECC)",
+          "description": "MCS Day 1 at MECC is staggered by last name.\n\nThu Aug 13: last names A–L.\nFri Aug 14: last names M–Z.\n\nAll students attend on Mon Aug 17."
+        },
+        "mhs": {
+          "summary": "First Day of School — Staggered Start (MHS)",
+          "description": "MCS Day 1 at Mason High School is staggered by grade.\n\nThu Aug 13: grades 9 and 12.\nFri Aug 14: grades 10 and 11.\n\nAll students attend on Mon Aug 17."
+        }
+      }
+    },
+    {
+      "id": "day-2-all",
+      "summary": "MCS Day 2 — All Students Attend",
+      "start": "2026-08-17",
+      "end": "2026-08-17",
+      "category": "first-last",
+      "audiences": ["all"],
+      "description": "First day with all students present, following the staggered Aug 13/14 start."
+    },
+    {
+      "id": "labor-day",
+      "summary": "Labor Day — No School",
+      "start": "2026-09-07",
+      "end": "2026-09-07",
+      "category": "holiday",
+      "audiences": ["all"],
+      "description": "District holiday. No school."
+    },
+    {
+      "id": "journey-sep-25",
+      "summary": "Journey Day — No In-Person Learning",
+      "start": "2026-09-25",
+      "end": "2026-09-25",
+      "category": "journey",
+      "audiences": ["all"],
+      "description": "Journey Day. No in-person learning. Buildings are closed to students."
+    },
+    {
+      "id": "pwd-oct",
+      "summary": "Professional Work Days — No School",
+      "start": "2026-10-12",
+      "end": "2026-10-13",
+      "category": "no-school",
+      "audiences": ["all"],
+      "description": "Two-day professional work day for staff. No school for students Mon Oct 12 and Tue Oct 13."
+    },
+    {
+      "id": "journey-nov-20",
+      "summary": "Journey Day — No In-Person Learning",
+      "start": "2026-11-20",
+      "end": "2026-11-20",
+      "category": "journey",
+      "audiences": ["all"],
+      "description": "Journey Day. No in-person learning. Buildings are closed to students."
+    },
+    {
+      "id": "fall-break",
+      "summary": "Fall Break — No School",
+      "start": "2026-11-23",
+      "end": "2026-11-27",
+      "category": "holiday",
+      "audiences": ["all"],
+      "description": "Fall Break, Mon Nov 23 through Fri Nov 27. Thanksgiving is Thu Nov 26."
+    },
+    {
+      "id": "winter-break",
+      "summary": "Winter Break — No School",
+      "start": "2026-12-21",
+      "end": "2027-01-01",
+      "category": "holiday",
+      "audiences": ["all"],
+      "description": "Winter Break, Mon Dec 21 through Fri Jan 1. Mon Dec 21 is also a staff professional work day. Classes resume Mon Jan 4."
+    },
+    {
+      "id": "mlk",
+      "summary": "Martin Luther King Jr. Day — No School",
+      "start": "2027-01-18",
+      "end": "2027-01-18",
+      "category": "holiday",
+      "audiences": ["all"],
+      "description": "District holiday. No school."
+    },
+    {
+      "id": "journey-feb-12",
+      "summary": "Journey Day — No In-Person Learning",
+      "start": "2027-02-12",
+      "end": "2027-02-12",
+      "category": "journey",
+      "audiences": ["all"],
+      "description": "Journey Day. No in-person learning. Buildings are closed to students."
+    },
+    {
+      "id": "presidents-day",
+      "summary": "Presidents' Day — No School",
+      "start": "2027-02-15",
+      "end": "2027-02-15",
+      "category": "holiday",
+      "audiences": ["all"],
+      "description": "District holiday. No school."
+    },
+    {
+      "id": "journey-mar-12",
+      "summary": "Journey Day — No In-Person Learning",
+      "start": "2027-03-12",
+      "end": "2027-03-12",
+      "category": "journey",
+      "audiences": ["all"],
+      "description": "Journey Day. No in-person learning.\n\nNote: on the district PDF this date is shaded as both a Journey Day and a professional work day, but the printed legend lists it only under Journey Days. Confirm with the district if it matters to you."
+    },
+    {
+      "id": "spring-break",
+      "summary": "Spring Break — No School",
+      "start": "2027-03-22",
+      "end": "2027-03-26",
+      "category": "holiday",
+      "audiences": ["all"],
+      "description": "Spring Break, Mon Mar 22 through Fri Mar 26. Classes resume Mon Mar 29."
+    },
+    {
+      "id": "graduation",
+      "summary": "MHS Graduation",
+      "start": "2027-05-16",
+      "end": "2027-05-16",
+      "category": "event",
+      "audiences": ["mhs"],
+      "description": "Mason High School graduation. Time and venue are announced by the school closer to the date."
+    },
+    {
+      "id": "last-day",
+      "summary": "Last Day of School",
+      "start": "2027-05-21",
+      "end": "2027-05-21",
+      "category": "first-last",
+      "audiences": ["all"],
+      "description": "Last day of the 2026–2027 school year for students."
+    },
+    {
+      "id": "pwd-may-24",
+      "summary": "Staff Professional Work Day — No School",
+      "start": "2027-05-24",
+      "end": "2027-05-24",
+      "category": "no-school",
+      "audiences": ["all"],
+      "description": "Professional work day for staff. No students."
+    },
+    {
+      "id": "memorial-day",
+      "summary": "Memorial Day",
+      "start": "2027-05-31",
+      "end": "2027-05-31",
+      "category": "holiday",
+      "audiences": ["all"],
+      "description": "District holiday, after the last day of school."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "district": {
+    "name": "Mason City Schools",
+    "shortName": "MCS",
+    "timezone": "America/New_York",
+    "schoolYear": "2026-2027",
+    "sourceDocument": "2026-2027 Academic Calendar (revised 7.8.25)",
+    "sourceUrl": "https://www.masonohioschools.com/"
+  },
+  "buildings": [
+    {
+      "code": "mecc",
+      "name": "Mason Early Childhood Center",
+      "abbr": "MECC",
+      "grades": "PK–2",
+      "gradeList": ["PK", "K", "1", "2"],
+      "published": true,
+      "phone": "(513) 398-3741",
+      "blurb": "Preschool through 2nd grade."
+    },
+    {
+      "code": "mhs",
+      "name": "Mason High School",
+      "abbr": "MHS",
+      "grades": "9–12",
+      "gradeList": ["9", "10", "11", "12"],
+      "published": true,
+      "phone": "(513) 398-5025",
+      "blurb": "Grades 9 through 12. Varsity athletics can be layered on."
+    },
+    {
+      "code": "me",
+      "name": "Mason Elementary",
+      "abbr": "ME",
+      "grades": "3–4",
+      "gradeList": ["3", "4"],
+      "published": false,
+      "phone": "(513) 398-5821",
+      "blurb": "Coming soon."
+    },
+    {
+      "code": "mi",
+      "name": "Mason Intermediate",
+      "abbr": "MI",
+      "grades": "5–6",
+      "gradeList": ["5", "6"],
+      "published": false,
+      "phone": "(513) 459-2850",
+      "blurb": "Coming soon."
+    },
+    {
+      "code": "mms",
+      "name": "Mason Middle School",
+      "abbr": "MMS",
+      "grades": "7–8",
+      "gradeList": ["7", "8"],
+      "published": false,
+      "phone": "(513) 398-9035",
+      "blurb": "Coming soon."
+    }
+  ]
+}
