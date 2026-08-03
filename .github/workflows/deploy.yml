@@ -47,6 +47,11 @@ jobs:
             --levels Varsity
 
       - name: Build feeds and site
+        # PTO_CODE is passed as an environment variable rather than a CLI flag
+        # so it never appears in the workflow logs. If the secret is not set,
+        # the PTO feeds are simply skipped and the rest of the site still builds.
+        env:
+          PTO_CODE: ${{ secrets.PTO_CODE }}
         run: python scripts/build.py --base-url "${{ steps.pages.outputs.base_url }}"
 
       - name: Validate generated feeds

@@ -21,6 +21,11 @@
   --c-firstlast: #16a34a;
   --c-event: #0891b2;
   --c-sports: #ea580c;
+  --c-pto-meeting: #0f766e;
+  --c-pto-event: #059669;
+  --c-school: #2563eb;
+  --c-staff: #9333ea;
+  --c-observance: #b45309;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -196,6 +201,49 @@ h3 { margin: 0 0 6px; font-size: 15.5px; }
 }
 .chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
 .chip-empty { color: var(--ink-3); font-size: 14px; padding-top: 12px; }
+
+/* ---------- access code ---------- */
+.codebox {
+  margin-top: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  max-width: 520px;
+}
+.codebox[hidden] { display: none; }
+.codebox label {
+  display: block;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 7px;
+}
+.coderow { display: flex; gap: 9px; flex-wrap: wrap; }
+.coderow input {
+  flex: 1 1 190px;
+  min-width: 0;
+  padding: 12px 13px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font: 16px/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .05em;
+}
+.coderow input[aria-invalid="true"] { border-color: #dc2626; }
+.coderow .btn { flex: 0 0 auto; }
+.codemsg { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-3); }
+.codemsg.ok { color: #047857; font-weight: 600; }
+.codemsg.bad { color: #dc2626; font-weight: 600; }
+@media (prefers-color-scheme: dark) {
+  .codemsg.ok { color: #34d399; }
+  .codemsg.bad { color: #f87171; }
+}
+.lock { font-size: 13px; }
+.card[data-pto="all"]:not(.unlocked) .card-title { color: var(--ink-2); }
 
 /* ---------- buttons ---------- */
 .btn {

@@ -59,6 +59,38 @@
   </details>
 </section>
 
+<section class="wrap section is-hidden" id="ptoStep">
+  <h2><span class="step">2</span> Add the MECC PTO calendar?</h2>
+  <p class="help">Board meetings, book fairs, spirit wear dates, class parties, field days and staff luncheons. The PTO shares an access code with MECC families.</p>
+  <div class="grid grid-2" role="radiogroup" aria-label="Include the PTO calendar">
+    <button class="card" role="radio" aria-checked="true" data-pto="none">
+      <span class="card-title">Just the school calendar</span>
+      <span class="card-sub">No-school days, breaks and Journey Days only.</span>
+    </button>
+    <button class="card" role="radio" aria-checked="false" data-pto="all" id="ptoCardAll">
+      <span class="card-title">Add PTO events <span class="lock" aria-hidden="true">🔒</span></span>
+      <span class="card-sub" id="ptoCardSub">Requires the PTO access code.</span>
+    </button>
+  </div>
+
+  <form class="codebox" id="ptoForm" autocomplete="off">
+    <label for="ptoCode">MECC PTO access code</label>
+    <div class="coderow">
+      <input id="ptoCode" type="text" inputmode="text" autocapitalize="none" spellcheck="false"
+             placeholder="Enter code" aria-describedby="ptoCodeMsg">
+      <button class="btn btn-primary" type="submit">Unlock</button>
+    </div>
+    <p class="codemsg" id="ptoCodeMsg">Don't have it? Ask the MECC PTO or check the PTO newsletter.</p>
+  </form>
+
+  <details class="per-sport" id="ptoOnlyWrap" hidden>
+    <summary>Or subscribe to PTO events on their own</summary>
+    <div class="chiprow">
+      <button class="chip" type="button" id="ptoOnlyChip" aria-pressed="false">PTO events only</button>
+    </div>
+  </details>
+</section>
+
 <section class="wrap section is-hidden" id="subscribeStep">
   <h2><span class="step">3</span> Subscribe</h2>
   <p class="help" id="chosenLabel"></p>

@@ -7,7 +7,9 @@ Run:  python scripts/build.py --base-url https://you.github.io/mason-family-cale
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import shutil
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -33,7 +35,45 @@ CATEGORY_LABELS = {
     "holiday": "Holiday",
     "event": "School Event",
     "sports": "Athletics",
+    "pto-meeting": "PTO Meeting",
+    "pto-event": "PTO Event",
+    "school": "School Day Info",
+    "staff": "Staff Appreciation",
+    "observance": "Cultural / Religious Observance",
 }
+
+# --- PTO access code -------------------------------------------------------
+#
+# The PTO feed is protected by an unguessable URL rather than a login, because
+# GitHub Pages serves static files and cannot check a password. Two separate
+# one-way hashes of the same code are used, with different salts:
+#
+#   gate hash  -> published, so the page can check a typed code is correct
+#   feed token -> NEVER published; it is the secret part of the .ics filename
+#
+# Because the salts differ, knowing the published gate hash does not let you
+# derive the feed token. You have to know the code itself. The code is supplied
+# at build time via the PTO_CODE environment variable (a GitHub Actions secret),
+# so it never appears in the repository.
+#
+# Be clear-eyed about the strength of this: a short code is brute-forceable
+# offline against the published gate hash. It keeps the calendar out of search
+# results and away from casual visitors. It is not a lock on a safe.
+
+PTO_GATE_SALT = "mfc-pto-gate:"
+PTO_FEED_SALT = "mfc-pto-feed:"
+
+
+def normalize_code(code: str) -> str:
+    return " ".join(code.split()).lower()
+
+
+def pto_gate_hash(code: str) -> str:
+    return hashlib.sha256((PTO_GATE_SALT + normalize_code(code)).encode()).hexdigest()
+
+
+def pto_feed_token(code: str) -> str:
+    return hashlib.sha256((PTO_FEED_SALT + normalize_code(code)).encode()).hexdigest()[:24]
 
 
 def load_json(path: Path) -> dict:
@@ -121,6 +161,47 @@ def add_sports(cal: Calendar, games: list[dict]) -> None:
             )
 
 
+def add_pto(cal: Calendar, events: list[dict]) -> None:
+    for ev in events:
+        start = date.fromisoformat(ev["start"])
+        end = date.fromisoformat(ev["end"])
+        uid = make_uid(UID_NS, "pto", ev["id"])
+
+        bits = []
+        if ev.get("description"):
+            bits.append(ev["description"])
+        if ev.get("location"):
+            bits.append(f"Where: {ev['location']}")
+        bits.append("MECC PTO calendar. " + DISCLAIMER)
+        description = "\n\n".join(bits)
+
+        if ev.get("time") and start == end:
+            hh, mm = (int(x) for x in ev["time"].split(":"))
+            if ev.get("endTime"):
+                eh, em = (int(x) for x in ev["endTime"].split(":"))
+                minutes = max(15, (eh * 60 + em) - (hh * 60 + mm))
+            else:
+                minutes = 60
+            cal.add_timed(
+                uid=uid,
+                summary=ev["summary"],
+                start=datetime(start.year, start.month, start.day, hh, mm),
+                duration_minutes=minutes,
+                description=description,
+                location=ev.get("location", ""),
+                categories=CATEGORY_LABELS.get(ev.get("category", ""), "PTO"),
+            )
+        else:
+            cal.add_all_day(
+                uid=uid,
+                summary=ev["summary"],
+                start=start,
+                end_inclusive=end,
+                description=description,
+                categories=CATEGORY_LABELS.get(ev.get("category", ""), "PTO"),
+            )
+
+
 def add_sports_placeholder(cal: Calendar) -> None:
     """
     A VCALENDAR with zero VEVENTs is legal, but several clients (Google in
@@ -158,6 +239,9 @@ def main() -> int:
     ap.add_argument("--base-url", default="https://example.github.io/mason-family-calendar",
                     help="public base URL where dist/ will be served (no trailing slash)")
     ap.add_argument("--now", default=None, help="ISO timestamp override, for reproducible builds")
+    ap.add_argument("--pto-code", default=None,
+                    help="MECC PTO access code. Falls back to the PTO_CODE env var. "
+                         "Without it, the PTO feeds are skipped entirely.")
     args = ap.parse_args()
 
     base = args.base_url.rstrip("/")
@@ -278,6 +362,63 @@ def main() -> int:
             "summary": f"Varsity {label} only.",
         })
 
+    # --- MECC PTO, behind an access code -----------------------------------
+    pto_code = args.pto_code or os.environ.get("PTO_CODE") or ""
+    pto_path = DATA / "mecc-pto-2026-27.json"
+    pto_data = load_json(pto_path) if pto_path.exists() else {"events": [], "unscheduled": []}
+    pto_events = pto_data.get("events", [])
+    pto_meta: dict = {"enabled": False, "eventCount": len(pto_events)}
+
+    if pto_code.strip() and pto_events:
+        token = pto_feed_token(pto_code)
+
+        cal = Calendar(
+            name=f"MECC PTO {year} — Mason Family Calendar",
+            description=(f"MECC PTO events for {year}. Shared with MECC families by the PTO. "
+                         f"{DISCLAIMER}"),
+            url=f"{base}/feeds/pto-{token}.ics",
+            color="#0f766e",
+        )
+        add_pto(cal, pto_events)
+        write_feed(cal, f"pto-{token}.ics", now)
+
+        cal = Calendar(
+            name=f"MECC {year} + PTO — Mason Family Calendar",
+            description=(f"Mason Early Childhood Center academic calendar plus MECC PTO "
+                         f"events for {year}. {DISCLAIMER}"),
+            url=f"{base}/feeds/mecc-pto-{token}.ics",
+            color="#0f766e",
+        )
+        add_academic(cal, academic_events_for("mecc", academic), "mecc")
+        add_pto(cal, pto_events)
+        write_feed(cal, f"mecc-pto-{token}.ics", now)
+
+        # Preview data for the site, also behind the token so the event list is
+        # not readable from the published calendar.json.
+        (DIST / f"pto-{token}.json").write_text(
+            json.dumps({
+                "year": year,
+                "events": [
+                    {k: e.get(k) for k in
+                     ("id", "summary", "start", "end", "time", "endTime", "location",
+                      "category", "description")}
+                    for e in pto_events
+                ],
+                "unscheduled": pto_data.get("unscheduled", []),
+            }, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+        pto_meta = {
+            "enabled": True,
+            "gateHash": pto_gate_hash(pto_code),
+            "eventCount": len(pto_events),
+            "unscheduledCount": len(pto_data.get("unscheduled", [])),
+        }
+        print(f"PTO feeds built ({len(pto_events)} events) behind access code")
+    elif pto_events:
+        print("PTO code not supplied (--pto-code / PTO_CODE) — PTO feeds skipped")
+
     # --- site data ----------------------------------------------------------
     manifest = {
         "generated": now.replace(microsecond=0).isoformat() + "Z",
@@ -311,6 +452,7 @@ def main() -> int:
             "problems": scraped.get("problems", []),
             "sourcesChecked": len(scraped.get("sources", [])),
         },
+        "pto": pto_meta,
         "categoryLabels": CATEGORY_LABELS,
     }
 

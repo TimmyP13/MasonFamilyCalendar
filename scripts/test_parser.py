@@ -170,6 +170,50 @@ cal2.add_all_day(uid="a@x", summary="x", start=date(2026, 1, 1), end_inclusive=d
 check("no VTIMEZONE when unused", "BEGIN:VTIMEZONE" in cal2.serialize(datetime(2026, 1, 1)), False)
 
 # --------------------------------------------------------------------------
+# PTO access code
+# --------------------------------------------------------------------------
+
+from build import normalize_code, pto_feed_token, pto_gate_hash  # noqa: E402
+
+# The code is normalised the same way in build.py and site/app.js, so parents
+# are not defeated by capitalisation or a trailing space pasted from an email.
+check("normalise case", normalize_code("PTO!"), "pto!")
+check("normalise spaces", normalize_code("  pto!  "), "pto!")
+check("normalise inner whitespace", normalize_code("go  comets"), "go comets")
+
+# The published gate hash must not reveal the secret feed token. Different
+# salts mean one cannot be derived from the other.
+gate = pto_gate_hash("PTO!")
+token = pto_feed_token("PTO!")
+check("gate hash is sha256-length", len(gate), 64)
+check("feed token length", len(token), 24)
+check("token is not a prefix of the gate hash", gate.startswith(token), False)
+check("token not contained in gate hash", token in gate, False)
+check("gate hash case-insensitive", pto_gate_hash("pto!"), pto_gate_hash("PTO!"))
+check("token case-insensitive", pto_feed_token(" Pto! "), pto_feed_token("PTO!"))
+check("different codes differ", pto_feed_token("PTO!") == pto_feed_token("PTO?"), False)
+
+# Known-answer test, so a refactor that silently changes the derivation (and
+# would break every existing subscription) fails loudly here instead.
+import hashlib as _hl  # noqa: E402
+check("gate KAT", gate, _hl.sha256(b"mfc-pto-gate:pto!").hexdigest())
+check("token KAT", token, _hl.sha256(b"mfc-pto-feed:pto!").hexdigest()[:24])
+
+# PTO data file sanity
+import json as _json  # noqa: E402
+_pto = _json.loads((Path(__file__).resolve().parent.parent / "data" / "mecc-pto-2026-27.json").read_text())
+_ids = [e["id"] for e in _pto["events"]]
+check("pto ids unique", len(_ids), len(set(_ids)))
+check("pto end >= start", all(e["end"] >= e["start"] for e in _pto["events"]), True)
+check("pto times well formed",
+      all(("time" not in e) or (len(e["time"]) == 5 and e["time"][2] == ":") for e in _pto["events"]), True)
+check("pto endTime after time",
+      all(("endTime" not in e) or (e["endTime"] > e["time"]) for e in _pto["events"]), True)
+# multi-day events must not carry a start time; the writer would drop it
+check("no timed multi-day pto events",
+      all(not (e.get("time") and e["start"] != e["end"]) for e in _pto["events"]), True)
+
+# --------------------------------------------------------------------------
 
 if FAILURES:
     print(f"{len(FAILURES)} FAILURE(S):\n")

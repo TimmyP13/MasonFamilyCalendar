@@ -20,6 +20,8 @@ Static files in `dist/`, ready for GitHub Pages:
 | `feeds/varsity-all.ics` | Varsity athletics only, all sports |
 | `feeds/varsity-<sport>.ics` | One sport at a time (generated only for sports with games) |
 | `feeds/district.ics` | District-wide dates only — for families with kids in several buildings |
+| `feeds/mecc-pto-<token>.ics` | MECC academic calendar **+** MECC PTO events — access code required |
+| `feeds/pto-<token>.ics` | MECC PTO events only — access code required |
 
 Plus `index.html` (the subscribe flow) and `calendar.json` (data the page reads).
 
@@ -47,10 +49,15 @@ and they get feeds and buttons with no code changes.
 3. **Turn on Pages.** Repo → **Settings → Pages → Build and deployment → Source:
    GitHub Actions**. Do this *before* the first workflow run, or the deploy step fails.
 
-4. **Run the workflow.** Repo → **Actions → Build and publish calendar feeds → Run
+4. **Add the PTO access code.** Repo → **Settings → Secrets and variables → Actions
+   → New repository secret**. Name it `PTO_CODE`, value `PTO!` (or whatever the PTO
+   wants to hand out). Without this secret the site builds fine, it just won't offer
+   the PTO calendar. See [The PTO access code](#the-pto-access-code) for how it works.
+
+5. **Run the workflow.** Repo → **Actions → Build and publish calendar feeds → Run
    workflow**. It scrapes athletics, builds the feeds, validates them and publishes.
 
-5. **Your site is live** at `https://YOUR-USERNAME.github.io/mason-family-calendar/`.
+6. **Your site is live** at `https://YOUR-USERNAME.github.io/mason-family-calendar/`.
 
 After that it rebuilds itself daily at 07:10 UTC (about 3am Eastern) and on every push.
 
@@ -72,7 +79,7 @@ so it survives rebuilds.
 pip install -r requirements.txt
 
 python scripts/scrape_sports.py            # optional; needs network
-python scripts/build.py --base-url http://localhost:8000
+PTO_CODE='PTO!' python scripts/build.py --base-url http://localhost:8000
 python scripts/validate.py
 python scripts/test_parser.py
 
@@ -122,6 +129,60 @@ sport + level + gender + date + opponent.
 To include JV and freshman schedules, change `--levels Varsity` to
 `--levels Varsity,JV,Freshman` in `.github/workflows/deploy.yml`.
 
+### MECC PTO — hand-transcribed, code-gated
+
+`data/mecc-pto-2026-27.json` comes from the PTO's own 2026–27 calendar document.
+District no-school days are deliberately **not** repeated there — they already live in
+`academic-2026-27.json` and would show up twice in the combined feed.
+
+One item can't be published: the **MSF VIP Event for MECC students** is marked
+*"TBD – date needed from MSF"* on the PTO calendar. It's parked in the `unscheduled`
+array; give it a date and move it into `events` when the PTO confirms.
+
+---
+
+## The PTO access code
+
+The PTO calendar is only offered after someone types an access code. Here's what that
+does and — more importantly — what it doesn't.
+
+**How it works.** GitHub Pages serves static files; there's no server to check a
+password. So the *URL itself* is the secret. Two different one-way hashes are taken of
+the same code:
+
+| Hash | Salt | Published? | Purpose |
+|---|---|---|---|
+| Gate hash | `mfc-pto-gate:` | Yes, in `calendar.json` | Lets the page check a typed code is right |
+| Feed token | `mfc-pto-feed:` | **No, never** | The secret part of the `.ics` filename |
+
+Because the salts differ, holding the published gate hash doesn't let you compute the
+feed token — you need the code itself. The code reaches the build via the `PTO_CODE`
+GitHub Actions secret, so the plaintext is never in the repository, and it's passed as
+an environment variable rather than a command-line flag so it stays out of the logs.
+
+Codes are normalised (trimmed, collapsed whitespace, lowercased) identically in
+`build.py` and `site/app.js`, so `PTO!`, `pto!` and ` Pto! ` all work. There are
+known-answer tests for the derivation in `test_parser.py` — if you refactor it and the
+output changes, the tests fail, because a changed token silently breaks every
+subscription already out there.
+
+**What it is not.** Be straight with the PTO about this:
+
+- A short code can be brute-forced offline against the published gate hash. `PTO!` in
+  particular would fall to a dictionary attack in seconds. A longer, less obvious code
+  (`mecc-comets-2027`) is meaningfully better, and costs nothing.
+- Once someone has the feed URL, they have it permanently and can pass it on. Changing
+  the code changes the URL, which breaks everyone's existing subscription — so treat a
+  code change as a re-subscribe event for the whole PTO.
+- **The repository is public, so `data/mecc-pto-2026-27.json` is readable by anyone who
+  browses the source.** The code protects the calendar *feed*, not the underlying data
+  file. If the PTO needs the content itself to be private, this design isn't enough —
+  that needs a private repo (which rules out free Pages) or a real backend.
+
+For the actual job here — keeping the PTO calendar out of Google results and away from
+people who aren't MECC families — it's proportionate. For anything genuinely sensitive,
+it isn't. Worth saying out loud to whoever asked for the code.
+
 ---
 
 ## Layout
@@ -129,6 +190,7 @@ To include JV and freshman schedules, change `--levels Varsity` to
 ```
 data/
   academic-2026-27.json   hand-transcribed district calendar (source of truth)
+  mecc-pto-2026-27.json   MECC PTO calendar, published behind the access code
   schools.json            buildings, grade bands, which ones are published
   sports-manual.json      hand-entered games; override the scraper here
   sports-scraped.json     generated by the scraper, not committed
