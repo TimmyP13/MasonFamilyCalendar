@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -36,9 +36,24 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Sync PTO calendar data from live source
+        env:
+          PTO_SYNC_URL: ${{ secrets.PTO_SYNC_URL }}
+        run: python scripts/fetch_pto_sync.py
+
+      - name: Commit updated PTO data (if changed)
+        run: |
+          if ! git diff --quiet -- data/mecc-pto-2026-27.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/mecc-pto-2026-27.json
+            git commit -m "Auto-sync MECC PTO calendar data [skip ci]"
+            git push
+          else
+            echo "No changes to PTO data."
+          fi
+
       - name: Scrape Mason athletics schedules
-        # Never fail the build over the athletics site being down or
-        # reformatted — the academic feeds matter more and must keep shipping.
         continue-on-error: true
         run: |
           python scripts/scrape_sports.py \
@@ -47,9 +62,6 @@ jobs:
             --levels Varsity
 
       - name: Build feeds and site
-        # PTO_CODE is passed as an environment variable rather than a CLI flag
-        # so it never appears in the workflow logs. If the secret is not set,
-        # the PTO feeds are simply skipped and the rest of the site still builds.
         env:
           PTO_CODE: ${{ secrets.PTO_CODE }}
         run: python scripts/build.py --base-url "${{ steps.pages.outputs.base_url }}"
