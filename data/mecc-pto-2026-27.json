@@ -11,105 +11,726 @@
   ],
   "unscheduled": [
     {
-      "summary": "MSF VIP Event for MECC students",
-      "why": "The PTO calendar lists this as 'TBD - date needed from MSF', so it cannot be published to a feed yet."
+      "why": "The PTO calendar lists this as 'TBD - date needed from MSF', so it cannot be published to a feed yet.",
+      "summary": "MSF VIP Event for MECC students"
     }
   ],
   "events": [
-    { "id": "pto-board-jul", "summary": "PTO Executive Board Meeting", "start": "2026-07-23", "end": "2026-07-23", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "spirit-fall-soft-start", "summary": "Fall Spirit Wear Soft Launch Begins", "start": "2026-07-27", "end": "2026-07-27", "category": "pto-event", "description": "Soft launch for MECC staff and PTO.\n\nOrder by 8/28 for delivery by 9/10.\nOrders placed 8/29–9/6 will be delivered by 9/24." },
-
-    { "id": "pto-board-aug", "summary": "PTO Executive Board Meeting", "start": "2026-08-04", "end": "2026-08-04", "time": "18:30", "endTime": "20:00", "location": "MECC Cafeteria", "category": "pto-meeting" },
-    { "id": "new-family-welcome", "summary": "New Family Welcome", "start": "2026-08-07", "end": "2026-08-07", "time": "10:00", "endTime": "11:00", "location": "MECC", "category": "pto-event", "description": "New Family Welcome, with Italian Ice tickets." },
-    { "id": "self-guided-walkthrough", "summary": "MECC Self-Guided Walk-Through for All Families", "start": "2026-08-07", "end": "2026-08-07", "time": "11:00", "endTime": "17:00", "location": "MECC", "category": "pto-event" },
-    { "id": "spirit-fall-soft-end", "summary": "Fall Spirit Wear Soft Launch Ends", "start": "2026-08-07", "end": "2026-08-07", "category": "pto-event", "description": "Soft launch for MECC staff and PTO closes.\n\nOrder by 8/28 for delivery by 9/10.\nOrders placed 8/29–9/6 will be delivered by 9/24." },
-    { "id": "staff-pizza", "summary": "MECC Staff Pizza", "start": "2026-08-10", "end": "2026-08-10", "time": "11:00", "endTime": "13:00", "location": "MECC Cafeteria", "category": "staff" },
-    { "id": "comet-welcome-day", "summary": "MECC Comet Welcome Day — Spirit Wear / PTO Table", "start": "2026-08-12", "end": "2026-08-12", "time": "08:30", "endTime": "15:45", "location": "MECC Cafeteria", "category": "pto-event", "description": "Spirit Wear and PTO table in the cafeteria during Comet Welcome Day." },
-    { "id": "spirit-fall-sale-start", "summary": "Fall Spirit Wear Sale Begins", "start": "2026-08-12", "end": "2026-08-12", "category": "pto-event", "description": "Order by 8/28 for delivery by 9/10.\nOrders placed 8/29–9/6 will be delivered by 9/24." },
-    { "id": "preschool-first-day", "summary": "Preschool First Day", "start": "2026-08-19", "end": "2026-08-19", "category": "school", "description": "Preschool starts later than the K–2 staggered start." },
-    { "id": "bus-driver-lunch", "summary": "Bus Driver Appreciation Lunch", "start": "2026-08-20", "end": "2026-08-20", "time": "13:00", "endTime": "14:00", "location": "Bus Depot", "category": "staff" },
-
-    { "id": "spirit-fall-sale-end", "summary": "Fall Spirit Wear Sale Ends", "start": "2026-09-06", "end": "2026-09-06", "category": "pto-event", "description": "Delivery by 9/24." },
-    { "id": "pto-board-sep", "summary": "PTO Executive Board Meeting", "start": "2026-09-08", "end": "2026-09-08", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "rosh-hashanah", "summary": "Rosh Hashanah", "start": "2026-09-11", "end": "2026-09-13", "category": "observance" },
-    { "id": "comet-kid-week", "summary": "Comet Kid Contribution Week with Spirit Days", "start": "2026-09-14", "end": "2026-09-18", "category": "pto-event" },
-    { "id": "kona-ice", "summary": "Kona Ice Playdates", "start": "2026-09-15", "end": "2026-09-17", "category": "pto-event", "description": "After school hours, on the MECC playgrounds." },
-    { "id": "mcs-tailgate", "summary": "Mason City Schools Tailgate", "start": "2026-09-18", "end": "2026-09-18", "time": "16:30", "endTime": "18:30", "location": "Mason Middle School Parking Lot", "category": "pto-event" },
-    { "id": "yom-kippur", "summary": "Yom Kippur", "start": "2026-09-20", "end": "2026-09-21", "category": "observance" },
-    { "id": "room-parent-sep", "summary": "Room Parent Meeting", "start": "2026-09-23", "end": "2026-09-23", "time": "09:30", "endTime": "10:30", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "fall-luncheon-setup", "summary": "Fall Staff Luncheon Setup", "start": "2026-09-29", "end": "2026-09-29", "time": "13:00", "endTime": "16:00", "location": "KIVA", "category": "staff" },
-    { "id": "fall-luncheon", "summary": "Fall Staff Luncheon", "start": "2026-09-30", "end": "2026-09-30", "time": "11:00", "endTime": "13:00", "location": "KIVA", "category": "staff" },
-    { "id": "room-parent-virtual", "summary": "Room Parent Virtual Meeting", "start": "2026-09-30", "end": "2026-09-30", "time": "19:00", "endTime": "20:00", "location": "Zoom", "category": "pto-meeting" },
-
-    { "id": "hispanic-heritage", "summary": "Hispanic Heritage CommUNITY Mirrors & Windows", "start": "2026-10-01", "end": "2026-10-01", "location": "Mason Intermediate", "category": "pto-event" },
-    { "id": "pto-board-oct", "summary": "PTO Executive Board Meeting", "start": "2026-10-06", "end": "2026-10-06", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "papa-johns-oct", "summary": "Papa John's Family Night", "start": "2026-10-06", "end": "2026-10-06", "category": "pto-event" },
-    { "id": "pictures-ps-1st", "summary": "School Pictures — Preschool and 1st Grade", "start": "2026-10-08", "end": "2026-10-08", "category": "school" },
-    { "id": "pictures-k-2nd", "summary": "School Pictures — Kindergarten and 2nd Grade", "start": "2026-10-09", "end": "2026-10-09", "category": "school" },
-    { "id": "trunk-or-treat", "summary": "Trunk or Treat", "start": "2026-10-24", "end": "2026-10-24", "time": "16:00", "endTime": "19:00", "location": "MHS Bus Loop", "category": "pto-event", "description": "4:00–4:30pm — sensory friendly.\n4:30–7:00pm — general admission." },
-    { "id": "fall-snack-cart", "summary": "Fall Snack Cart", "start": "2026-10-28", "end": "2026-10-28", "category": "pto-event" },
-
-    { "id": "spirit-winter-start", "summary": "Winter Spirit Wear Pop Up Begins", "start": "2026-11-02", "end": "2026-11-02", "category": "pto-event", "description": "Delivery by 12/11." },
-    { "id": "food-drive", "summary": "Make a Difference Food Drive Week", "start": "2026-11-02", "end": "2026-11-06", "location": "MECC KIVA", "category": "pto-event" },
-    { "id": "book-fair-fall-setup", "summary": "Book Fair Set Up", "start": "2026-11-05", "end": "2026-11-05", "location": "MECC Kindergarten Gym", "category": "pto-event", "description": "All day." },
-    { "id": "book-fair-fall-preview", "summary": "Book Fair Teacher Preview", "start": "2026-11-06", "end": "2026-11-06", "location": "MECC Kindergarten Gym", "category": "pto-event", "description": "All day." },
-    { "id": "diwali", "summary": "Diwali", "start": "2026-11-08", "end": "2026-11-08", "category": "observance" },
-    { "id": "book-fair-fall-open", "summary": "Book Fair Open", "start": "2026-11-09", "end": "2026-11-17", "location": "MECC Kindergarten Gym", "category": "pto-event", "description": "All day, Mon Nov 9 through Tue Nov 17." },
-    { "id": "pto-board-nov", "summary": "PTO Executive Board Meeting", "start": "2026-11-10", "end": "2026-11-10", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "concert-1st-nov-10", "summary": "1st Grade Music Concerts", "start": "2026-11-10", "end": "2026-11-10", "category": "school" },
-    { "id": "book-fair-fall-family", "summary": "Book Fair Family Night", "start": "2026-11-11", "end": "2026-11-11", "time": "17:00", "endTime": "19:30", "location": "MECC Kindergarten Gym", "category": "pto-event" },
-    { "id": "concert-1st-nov-12", "summary": "1st Grade Music Concerts", "start": "2026-11-12", "end": "2026-11-12", "category": "school" },
-    { "id": "picture-retakes", "summary": "School Picture Retakes", "start": "2026-11-12", "end": "2026-11-12", "category": "school" },
-    { "id": "spirit-winter-end", "summary": "Winter Spirit Wear Pop Up Ends", "start": "2026-11-13", "end": "2026-11-13", "category": "pto-event", "description": "Delivery by 12/11." },
-    { "id": "kiwanis-pancakes", "summary": "Kiwanis Pancake Breakfast", "start": "2026-11-14", "end": "2026-11-14", "location": "Mason Middle School", "category": "pto-event", "description": "Mason district event." },
-    { "id": "concert-1st-nov-16", "summary": "1st Grade Music Concerts", "start": "2026-11-16", "end": "2026-11-16", "category": "school" },
-    { "id": "book-fair-fall-closes", "summary": "Book Fair Closes", "start": "2026-11-18", "end": "2026-11-18", "location": "MECC Kindergarten Gym", "category": "pto-event" },
-    { "id": "book-fair-literati", "summary": "Book Fair: Literati Pick Up", "start": "2026-11-19", "end": "2026-11-19", "location": "MECC Kindergarten Gym", "category": "pto-event" },
-
-    { "id": "pto-board-dec", "summary": "PTO Executive Board Meeting", "start": "2026-12-08", "end": "2026-12-08", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "winter-parties", "summary": "Winter Class Parties", "start": "2026-12-15", "end": "2026-12-17", "category": "pto-event" },
-    { "id": "last-day-before-winter", "summary": "Last Day of School Before Winter Break", "start": "2026-12-18", "end": "2026-12-18", "category": "school", "description": "Students' last day before Winter Break. Mon Dec 21 is a staff professional work day." },
-
-    { "id": "school-resumes-jan", "summary": "School Resumes", "start": "2027-01-04", "end": "2027-01-04", "category": "school" },
-    { "id": "pto-board-jan", "summary": "PTO Executive Board Meeting", "start": "2027-01-12", "end": "2027-01-12", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "msf-reading-week", "summary": "MSF Reading Challenge — Reading Week + Spirit Wear Days", "start": "2027-01-19", "end": "2027-01-22", "category": "pto-event" },
-    { "id": "msf-collection-week", "summary": "MSF Reading Challenge — Collection Week", "start": "2027-01-25", "end": "2027-02-01", "category": "pto-event" },
-
-    { "id": "papa-johns-feb", "summary": "Papa John's Family Night", "start": "2027-02-02", "end": "2027-02-02", "category": "pto-event" },
-    { "id": "lunar-new-year", "summary": "Lunar New Year", "start": "2027-02-06", "end": "2027-02-06", "category": "observance" },
-    { "id": "valentines-parties", "summary": "Valentine's Class Parties", "start": "2027-02-09", "end": "2027-02-11", "category": "pto-event" },
-    { "id": "pto-board-feb", "summary": "PTO Executive Board Meeting", "start": "2027-02-09", "end": "2027-02-09", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting", "description": "Includes a volunteer information night for board and committee positions for next year." },
-    { "id": "kindergarten-registration", "summary": "Kindergarten Registration Night", "start": "2027-02-17", "end": "2027-02-17", "category": "school" },
-    { "id": "winter-luncheon-setup", "summary": "Winter Staff Luncheon Setup", "start": "2027-02-23", "end": "2027-02-23", "time": "13:00", "endTime": "16:00", "location": "KIVA", "category": "staff" },
-    { "id": "winter-luncheon", "summary": "Winter Staff Luncheon", "start": "2027-02-24", "end": "2027-02-24", "time": "11:00", "endTime": "13:00", "location": "KIVA", "category": "staff" },
-    { "id": "black-history", "summary": "Black History CommUNITY Mirrors & Windows", "start": "2027-02-25", "end": "2027-02-25", "location": "Mason Intermediate", "category": "pto-event" },
-
-    { "id": "taste-of-mason", "summary": "Taste of Mason", "start": "2027-03-03", "end": "2027-03-03", "location": "Mason High School", "category": "pto-event" },
-    { "id": "second-grade-social", "summary": "2nd Grade Social", "start": "2027-03-06", "end": "2027-03-06", "time": "17:00", "endTime": "19:30", "location": "MECC cafeteria and gyms", "category": "pto-event", "description": "5:00–5:30pm — sensory friendly.\n5:30–7:30pm — general admission." },
-    { "id": "concert-2nd-mar-9", "summary": "2nd Grade Music Concerts", "start": "2027-03-09", "end": "2027-03-09", "category": "school" },
-    { "id": "concert-2nd-mar-10", "summary": "2nd Grade Music Concerts", "start": "2027-03-10", "end": "2027-03-10", "category": "school" },
-    { "id": "pto-board-mar", "summary": "PTO Executive Board Meeting", "start": "2027-03-16", "end": "2027-03-16", "time": "18:30", "endTime": "20:00", "location": "MECC Cafeteria", "category": "pto-meeting" },
-    { "id": "school-resumes-mar", "summary": "School Resumes", "start": "2027-03-29", "end": "2027-03-29", "category": "school" },
-    { "id": "book-fair-spring-setup", "summary": "Book Fair Set Up", "start": "2027-03-30", "end": "2027-03-30", "location": "MECC Kindergarten Gym", "category": "pto-event", "description": "All day." },
-    { "id": "book-fair-spring-preview", "summary": "Book Fair Teacher Preview", "start": "2027-03-31", "end": "2027-03-31", "location": "MECC Kindergarten Gym", "category": "pto-event", "description": "All day." },
-
-    { "id": "book-fair-spring-open", "summary": "Book Fair Open", "start": "2027-04-01", "end": "2027-04-14", "location": "MECC Kindergarten Gym", "category": "pto-event", "description": "All day, Thu Apr 1 through Wed Apr 14." },
-    { "id": "book-fair-spring-family", "summary": "Book Fair Family Night + Kindergarten Art Night", "start": "2027-04-07", "end": "2027-04-07", "time": "17:00", "endTime": "19:30", "location": "MECC Kindergarten Gym", "category": "pto-event" },
-    { "id": "pto-board-apr", "summary": "PTO Executive Board Meeting", "start": "2027-04-13", "end": "2027-04-13", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "concert-k-apr-13", "summary": "Kindergarten Music Concerts", "start": "2027-04-13", "end": "2027-04-13", "category": "school" },
-    { "id": "concert-k-apr-14", "summary": "Kindergarten Music Concerts", "start": "2027-04-14", "end": "2027-04-14", "category": "school" },
-    { "id": "concert-k-apr-15", "summary": "Kindergarten Music Concerts", "start": "2027-04-15", "end": "2027-04-15", "category": "school" },
-    { "id": "staff-appreciation-week", "summary": "Staff Appreciation Week", "start": "2027-04-26", "end": "2027-04-30", "category": "staff" },
-    { "id": "staff-appreciation-lunch-1", "summary": "Staff Appreciation Luncheon", "start": "2027-04-28", "end": "2027-04-28", "time": "13:00", "endTime": "16:00", "location": "KIVA", "category": "staff" },
-    { "id": "staff-appreciation-lunch-2", "summary": "Staff Appreciation Luncheon", "start": "2027-04-29", "end": "2027-04-29", "time": "11:00", "endTime": "13:00", "location": "KIVA", "category": "staff" },
-
-    { "id": "field-day-k", "summary": "Kindergarten Field Day", "start": "2027-05-10", "end": "2027-05-10", "category": "school" },
-    { "id": "aapi-community", "summary": "AAPI CommUNITY Mirrors & Windows", "start": "2027-05-10", "end": "2027-05-10", "category": "pto-event" },
-    { "id": "field-day-2nd", "summary": "2nd Grade Field Day", "start": "2027-05-11", "end": "2027-05-11", "category": "school" },
-    { "id": "pto-board-may", "summary": "PTO Executive Board Meeting & Transition Meeting", "start": "2027-05-11", "end": "2027-05-11", "time": "18:30", "endTime": "20:00", "location": "KIVA", "category": "pto-meeting" },
-    { "id": "field-day-1st", "summary": "1st Grade Field Day", "start": "2027-05-12", "end": "2027-05-12", "category": "school" },
-    { "id": "field-day-rain", "summary": "Rain Day for Field Days", "start": "2027-05-13", "end": "2027-05-13", "category": "school" },
-    { "id": "parade-of-graduates", "summary": "Parade of Graduates", "start": "2027-05-13", "end": "2027-05-13", "category": "pto-event" },
-    { "id": "end-of-year-parties", "summary": "End of Year Class Parties", "start": "2027-05-18", "end": "2027-05-20", "category": "pto-event" }
+    {
+      "id": "pto-board-jul",
+      "end": "2026-07-23",
+      "time": "18:30",
+      "start": "2026-07-23",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "spirit-fall-soft-start",
+      "end": "2026-07-27",
+      "start": "2026-07-27",
+      "summary": "Fall Spirit Wear Soft Launch Begins",
+      "category": "pto-event",
+      "description": "Soft launch for MECC staff and PTO.\n\nOrder by 8/28 for delivery by 9/10.\nOrders placed 8/29–9/6 will be delivered by 9/24."
+    },
+    {
+      "id": "pto-board-aug",
+      "end": "2026-08-04",
+      "time": "18:30",
+      "start": "2026-08-04",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "MECC Cafeteria"
+    },
+    {
+      "id": "new-family-welcome",
+      "end": "2026-08-07",
+      "time": "10:00",
+      "start": "2026-08-07",
+      "endTime": "11:00",
+      "summary": "New Family Welcome",
+      "category": "pto-event",
+      "location": "MECC",
+      "description": "New Family Welcome, with Italian Ice tickets."
+    },
+    {
+      "id": "self-guided-walkthrough",
+      "end": "2026-08-07",
+      "time": "11:00",
+      "start": "2026-08-07",
+      "endTime": "17:00",
+      "summary": "MECC Self-Guided Walk-Through for All Families",
+      "category": "pto-event",
+      "location": "MECC"
+    },
+    {
+      "id": "spirit-fall-soft-end",
+      "end": "2026-08-07",
+      "start": "2026-08-07",
+      "summary": "Fall Spirit Wear Soft Launch Ends",
+      "category": "pto-event",
+      "description": "Soft launch for MECC staff and PTO closes.\n\nOrder by 8/28 for delivery by 9/10.\nOrders placed 8/29–9/6 will be delivered by 9/24."
+    },
+    {
+      "id": "staff-pizza",
+      "end": "2026-08-10",
+      "time": "11:00",
+      "start": "2026-08-10",
+      "endTime": "13:00",
+      "summary": "MECC Staff Pizza",
+      "category": "staff",
+      "location": "MECC Cafeteria"
+    },
+    {
+      "id": "comet-welcome-day",
+      "end": "2026-08-12",
+      "time": "08:30",
+      "start": "2026-08-12",
+      "endTime": "15:45",
+      "summary": "MECC Comet Welcome Day — Spirit Wear / PTO Table",
+      "category": "pto-event",
+      "location": "MECC Cafeteria",
+      "description": "Spirit Wear and PTO table in the cafeteria during Comet Welcome Day."
+    },
+    {
+      "id": "spirit-fall-sale-start",
+      "end": "2026-08-12",
+      "start": "2026-08-12",
+      "summary": "Fall Spirit Wear Sale Begins",
+      "category": "pto-event",
+      "description": "Order by 8/28 for delivery by 9/10.\nOrders placed 8/29–9/6 will be delivered by 9/24."
+    },
+    {
+      "id": "preschool-first-day",
+      "end": "2026-08-19",
+      "start": "2026-08-19",
+      "summary": "Preschool First Day",
+      "category": "school",
+      "description": "Preschool starts later than the K–2 staggered start."
+    },
+    {
+      "id": "bus-driver-lunch",
+      "end": "2026-08-20",
+      "time": "13:00",
+      "start": "2026-08-20",
+      "endTime": "14:00",
+      "summary": "Bus Driver Appreciation Lunch",
+      "category": "staff",
+      "location": "Bus Depot"
+    },
+    {
+      "id": "spirit-fall-sale-end",
+      "end": "2026-09-06",
+      "start": "2026-09-06",
+      "summary": "Fall Spirit Wear Sale Ends",
+      "category": "pto-event",
+      "description": "Delivery by 9/24."
+    },
+    {
+      "id": "pto-board-sep",
+      "end": "2026-09-08",
+      "time": "18:30",
+      "start": "2026-09-08",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "rosh-hashanah",
+      "end": "2026-09-13",
+      "start": "2026-09-11",
+      "summary": "Rosh Hashanah",
+      "category": "observance"
+    },
+    {
+      "id": "comet-kid-week",
+      "end": "2026-09-18",
+      "start": "2026-09-14",
+      "summary": "Comet Kid Contribution Week with Spirit Days",
+      "category": "pto-event"
+    },
+    {
+      "id": "kona-ice",
+      "end": "2026-09-17",
+      "start": "2026-09-15",
+      "summary": "Kona Ice Playdates",
+      "category": "pto-event",
+      "description": "After school hours, on the MECC playgrounds."
+    },
+    {
+      "id": "mcs-tailgate",
+      "end": "2026-09-18",
+      "time": "16:30",
+      "start": "2026-09-18",
+      "endTime": "18:30",
+      "summary": "Mason City Schools Tailgate",
+      "category": "pto-event",
+      "location": "Mason Middle School Parking Lot"
+    },
+    {
+      "id": "yom-kippur",
+      "end": "2026-09-21",
+      "start": "2026-09-20",
+      "summary": "Yom Kippur",
+      "category": "observance"
+    },
+    {
+      "id": "room-parent-sep",
+      "end": "2026-09-23",
+      "time": "09:30",
+      "start": "2026-09-23",
+      "endTime": "10:30",
+      "summary": "Room Parent Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "fall-luncheon-setup",
+      "end": "2026-09-29",
+      "time": "13:00",
+      "start": "2026-09-29",
+      "endTime": "16:00",
+      "summary": "Fall Staff Luncheon Setup",
+      "category": "staff",
+      "location": "KIVA"
+    },
+    {
+      "id": "fall-luncheon",
+      "end": "2026-09-30",
+      "time": "11:00",
+      "start": "2026-09-30",
+      "endTime": "13:00",
+      "summary": "Fall Staff Luncheon",
+      "category": "staff",
+      "location": "KIVA"
+    },
+    {
+      "id": "room-parent-virtual",
+      "end": "2026-09-30",
+      "time": "19:00",
+      "start": "2026-09-30",
+      "endTime": "20:00",
+      "summary": "Room Parent Virtual Meeting",
+      "category": "pto-meeting",
+      "location": "Zoom"
+    },
+    {
+      "id": "hispanic-heritage",
+      "end": "2026-10-01",
+      "start": "2026-10-01",
+      "summary": "Hispanic Heritage CommUNITY Mirrors & Windows",
+      "category": "pto-event",
+      "location": "Mason Intermediate"
+    },
+    {
+      "id": "pto-board-oct",
+      "end": "2026-10-06",
+      "time": "18:30",
+      "start": "2026-10-06",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "papa-johns-oct",
+      "end": "2026-10-06",
+      "start": "2026-10-06",
+      "summary": "Papa John's Family Night",
+      "category": "pto-event"
+    },
+    {
+      "id": "pictures-ps-1st",
+      "end": "2026-10-08",
+      "start": "2026-10-08",
+      "summary": "School Pictures — Preschool and 1st Grade",
+      "category": "school"
+    },
+    {
+      "id": "pictures-k-2nd",
+      "end": "2026-10-09",
+      "start": "2026-10-09",
+      "summary": "School Pictures — Kindergarten and 2nd Grade",
+      "category": "school"
+    },
+    {
+      "id": "trunk-or-treat",
+      "end": "2026-10-24",
+      "time": "16:00",
+      "start": "2026-10-24",
+      "endTime": "19:00",
+      "summary": "Trunk or Treat",
+      "category": "pto-event",
+      "location": "MHS Bus Loop",
+      "description": "4:00–4:30pm — sensory friendly.\n4:30–7:00pm — general admission."
+    },
+    {
+      "id": "fall-snack-cart",
+      "end": "2026-10-28",
+      "start": "2026-10-28",
+      "summary": "Fall Snack Cart",
+      "category": "pto-event"
+    },
+    {
+      "id": "spirit-winter-start",
+      "end": "2026-11-02",
+      "start": "2026-11-02",
+      "summary": "Winter Spirit Wear Pop Up Begins",
+      "category": "pto-event",
+      "description": "Delivery by 12/11."
+    },
+    {
+      "id": "food-drive",
+      "end": "2026-11-06",
+      "start": "2026-11-02",
+      "summary": "Make a Difference Food Drive Week",
+      "category": "pto-event",
+      "location": "MECC KIVA"
+    },
+    {
+      "id": "book-fair-fall-setup",
+      "end": "2026-11-05",
+      "start": "2026-11-05",
+      "summary": "Book Fair Set Up",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym",
+      "description": "All day."
+    },
+    {
+      "id": "book-fair-fall-preview",
+      "end": "2026-11-06",
+      "start": "2026-11-06",
+      "summary": "Book Fair Teacher Preview",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym",
+      "description": "All day."
+    },
+    {
+      "id": "diwali",
+      "end": "2026-11-08",
+      "start": "2026-11-08",
+      "summary": "Diwali",
+      "category": "observance"
+    },
+    {
+      "id": "book-fair-fall-open",
+      "end": "2026-11-17",
+      "start": "2026-11-09",
+      "summary": "Book Fair Open",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym",
+      "description": "All day, Mon Nov 9 through Tue Nov 17."
+    },
+    {
+      "id": "pto-board-nov",
+      "end": "2026-11-10",
+      "time": "18:30",
+      "start": "2026-11-10",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "concert-1st-nov-10",
+      "end": "2026-11-10",
+      "start": "2026-11-10",
+      "summary": "1st Grade Music Concerts",
+      "category": "school"
+    },
+    {
+      "id": "book-fair-fall-family",
+      "end": "2026-11-11",
+      "time": "17:00",
+      "start": "2026-11-11",
+      "endTime": "19:30",
+      "summary": "Book Fair Family Night",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym"
+    },
+    {
+      "id": "concert-1st-nov-12",
+      "end": "2026-11-12",
+      "start": "2026-11-12",
+      "summary": "1st Grade Music Concerts",
+      "category": "school"
+    },
+    {
+      "id": "picture-retakes",
+      "end": "2026-11-12",
+      "start": "2026-11-12",
+      "summary": "School Picture Retakes",
+      "category": "school"
+    },
+    {
+      "id": "spirit-winter-end",
+      "end": "2026-11-13",
+      "start": "2026-11-13",
+      "summary": "Winter Spirit Wear Pop Up Ends",
+      "category": "pto-event",
+      "description": "Delivery by 12/11."
+    },
+    {
+      "id": "kiwanis-pancakes",
+      "end": "2026-11-14",
+      "start": "2026-11-14",
+      "summary": "Kiwanis Pancake Breakfast",
+      "category": "pto-event",
+      "location": "Mason Middle School",
+      "description": "Mason district event."
+    },
+    {
+      "id": "concert-1st-nov-16",
+      "end": "2026-11-16",
+      "start": "2026-11-16",
+      "summary": "1st Grade Music Concerts",
+      "category": "school"
+    },
+    {
+      "id": "book-fair-fall-closes",
+      "end": "2026-11-18",
+      "start": "2026-11-18",
+      "summary": "Book Fair Closes",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym"
+    },
+    {
+      "id": "book-fair-literati",
+      "end": "2026-11-19",
+      "start": "2026-11-19",
+      "summary": "Book Fair: Literati Pick Up",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym"
+    },
+    {
+      "id": "pto-board-dec",
+      "end": "2026-12-08",
+      "time": "18:30",
+      "start": "2026-12-08",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "winter-parties",
+      "end": "2026-12-17",
+      "start": "2026-12-15",
+      "summary": "Winter Class Parties",
+      "category": "pto-event"
+    },
+    {
+      "id": "last-day-before-winter",
+      "end": "2026-12-18",
+      "start": "2026-12-18",
+      "summary": "Last Day of School Before Winter Break",
+      "category": "school",
+      "description": "Students' last day before Winter Break. Mon Dec 21 is a staff professional work day."
+    },
+    {
+      "id": "school-resumes-jan",
+      "end": "2027-01-04",
+      "start": "2027-01-04",
+      "summary": "School Resumes",
+      "category": "school"
+    },
+    {
+      "id": "pto-board-jan",
+      "end": "2027-01-12",
+      "time": "18:30",
+      "start": "2027-01-12",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "msf-reading-week",
+      "end": "2027-01-22",
+      "start": "2027-01-19",
+      "summary": "MSF Reading Challenge — Reading Week + Spirit Wear Days",
+      "category": "pto-event"
+    },
+    {
+      "id": "msf-collection-week",
+      "end": "2027-02-01",
+      "start": "2027-01-25",
+      "summary": "MSF Reading Challenge — Collection Week",
+      "category": "pto-event"
+    },
+    {
+      "id": "papa-johns-feb",
+      "end": "2027-02-02",
+      "start": "2027-02-02",
+      "summary": "Papa John's Family Night",
+      "category": "pto-event"
+    },
+    {
+      "id": "lunar-new-year",
+      "end": "2027-02-06",
+      "start": "2027-02-06",
+      "summary": "Lunar New Year",
+      "category": "observance"
+    },
+    {
+      "id": "valentines-parties",
+      "end": "2027-02-11",
+      "start": "2027-02-09",
+      "summary": "Valentine's Class Parties",
+      "category": "pto-event"
+    },
+    {
+      "id": "pto-board-feb",
+      "end": "2027-02-09",
+      "time": "18:30",
+      "start": "2027-02-09",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA",
+      "description": "Includes a volunteer information night for board and committee positions for next year."
+    },
+    {
+      "id": "kindergarten-registration",
+      "end": "2027-02-17",
+      "start": "2027-02-17",
+      "summary": "Kindergarten Registration Night",
+      "category": "school"
+    },
+    {
+      "id": "winter-luncheon-setup",
+      "end": "2027-02-23",
+      "time": "13:00",
+      "start": "2027-02-23",
+      "endTime": "16:00",
+      "summary": "Winter Staff Luncheon Setup",
+      "category": "staff",
+      "location": "KIVA"
+    },
+    {
+      "id": "winter-luncheon",
+      "end": "2027-02-24",
+      "time": "11:00",
+      "start": "2027-02-24",
+      "endTime": "13:00",
+      "summary": "Winter Staff Luncheon",
+      "category": "staff",
+      "location": "KIVA"
+    },
+    {
+      "id": "black-history",
+      "end": "2027-02-25",
+      "start": "2027-02-25",
+      "summary": "Black History CommUNITY Mirrors & Windows",
+      "category": "pto-event",
+      "location": "Mason Intermediate"
+    },
+    {
+      "id": "taste-of-mason",
+      "end": "2027-03-03",
+      "start": "2027-03-03",
+      "summary": "Taste of Mason",
+      "category": "pto-event",
+      "location": "Mason High School"
+    },
+    {
+      "id": "second-grade-social",
+      "end": "2027-03-06",
+      "time": "17:00",
+      "start": "2027-03-06",
+      "endTime": "19:30",
+      "summary": "2nd Grade Social",
+      "category": "pto-event",
+      "location": "MECC cafeteria and gyms",
+      "description": "5:00–5:30pm — sensory friendly.\n5:30–7:30pm — general admission."
+    },
+    {
+      "id": "concert-2nd-mar-9",
+      "end": "2027-03-09",
+      "start": "2027-03-09",
+      "summary": "2nd Grade Music Concerts",
+      "category": "school"
+    },
+    {
+      "id": "concert-2nd-mar-10",
+      "end": "2027-03-10",
+      "start": "2027-03-10",
+      "summary": "2nd Grade Music Concerts",
+      "category": "school"
+    },
+    {
+      "id": "pto-board-mar",
+      "end": "2027-03-16",
+      "time": "18:30",
+      "start": "2027-03-16",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "MECC Cafeteria"
+    },
+    {
+      "id": "school-resumes-mar",
+      "end": "2027-03-29",
+      "start": "2027-03-29",
+      "summary": "School Resumes",
+      "category": "school"
+    },
+    {
+      "id": "book-fair-spring-setup",
+      "end": "2027-03-30",
+      "start": "2027-03-30",
+      "summary": "Book Fair Set Up",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym",
+      "description": "All day."
+    },
+    {
+      "id": "book-fair-spring-preview",
+      "end": "2027-03-31",
+      "start": "2027-03-31",
+      "summary": "Book Fair Teacher Preview",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym",
+      "description": "All day."
+    },
+    {
+      "id": "book-fair-spring-open",
+      "end": "2027-04-14",
+      "start": "2027-04-01",
+      "summary": "Book Fair Open",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym",
+      "description": "All day, Thu Apr 1 through Wed Apr 14."
+    },
+    {
+      "id": "book-fair-spring-family",
+      "end": "2027-04-07",
+      "time": "17:00",
+      "start": "2027-04-07",
+      "endTime": "19:30",
+      "summary": "Book Fair Family Night + Kindergarten Art Night",
+      "category": "pto-event",
+      "location": "MECC Kindergarten Gym"
+    },
+    {
+      "id": "pto-board-apr",
+      "end": "2027-04-13",
+      "time": "18:30",
+      "start": "2027-04-13",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "concert-k-apr-13",
+      "end": "2027-04-13",
+      "start": "2027-04-13",
+      "summary": "Kindergarten Music Concerts",
+      "category": "school"
+    },
+    {
+      "id": "concert-k-apr-14",
+      "end": "2027-04-14",
+      "start": "2027-04-14",
+      "summary": "Kindergarten Music Concerts",
+      "category": "school"
+    },
+    {
+      "id": "concert-k-apr-15",
+      "end": "2027-04-15",
+      "start": "2027-04-15",
+      "summary": "Kindergarten Music Concerts",
+      "category": "school"
+    },
+    {
+      "id": "staff-appreciation-week",
+      "end": "2027-04-30",
+      "start": "2027-04-26",
+      "summary": "Staff Appreciation Week",
+      "category": "staff"
+    },
+    {
+      "id": "staff-appreciation-lunch-1",
+      "end": "2027-04-28",
+      "time": "13:00",
+      "start": "2027-04-28",
+      "endTime": "16:00",
+      "summary": "Staff Appreciation Luncheon",
+      "category": "staff",
+      "location": "KIVA"
+    },
+    {
+      "id": "staff-appreciation-lunch-2",
+      "end": "2027-04-29",
+      "time": "11:00",
+      "start": "2027-04-29",
+      "endTime": "13:00",
+      "summary": "Staff Appreciation Luncheon",
+      "category": "staff",
+      "location": "KIVA"
+    },
+    {
+      "id": "field-day-k",
+      "end": "2027-05-10",
+      "start": "2027-05-10",
+      "summary": "Kindergarten Field Day",
+      "category": "school"
+    },
+    {
+      "id": "aapi-community",
+      "end": "2027-05-10",
+      "start": "2027-05-10",
+      "summary": "AAPI CommUNITY Mirrors & Windows",
+      "category": "pto-event"
+    },
+    {
+      "id": "field-day-2nd",
+      "end": "2027-05-11",
+      "start": "2027-05-11",
+      "summary": "2nd Grade Field Day",
+      "category": "school"
+    },
+    {
+      "id": "pto-board-may",
+      "end": "2027-05-11",
+      "time": "18:30",
+      "start": "2027-05-11",
+      "endTime": "20:00",
+      "summary": "PTO Executive Board Meeting & Transition Meeting",
+      "category": "pto-meeting",
+      "location": "KIVA"
+    },
+    {
+      "id": "field-day-1st",
+      "end": "2027-05-12",
+      "start": "2027-05-12",
+      "summary": "1st Grade Field Day",
+      "category": "school"
+    },
+    {
+      "id": "field-day-rain",
+      "end": "2027-05-13",
+      "start": "2027-05-13",
+      "summary": "Rain Day for Field Days",
+      "category": "school"
+    },
+    {
+      "id": "parade-of-graduates",
+      "end": "2027-05-13",
+      "start": "2027-05-13",
+      "summary": "Parade of Graduates",
+      "category": "pto-event"
+    },
+    {
+      "id": "end-of-year-parties",
+      "end": "2027-05-20",
+      "start": "2027-05-18",
+      "summary": "End of Year Class Parties",
+      "category": "pto-event"
+    }
   ]
 }
